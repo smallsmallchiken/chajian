@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>管理个人信息 - 夏令营填表助手</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <h2>夏令营填表助手</h2>
+      <nav id="nav"></nav>
+      <div class="sidebar-footer">
+        <button id="saveProfile" class="primary">保存全部</button>
+        <button id="exportProfile">导出 JSON</button>
+        <button id="importProfile">导入 JSON</button>
+        <input type="file" id="importInput" accept=".json" hidden />
+      </div>
+    </aside>
+
+    <main class="content">
+      <section id="basic" class="panel">
+        <h3>基本信息</h3>
+        <div class="grid" data-section="basic"></div>
+      </section>
+
+      <section id="contact" class="panel">
+        <h3>联系方式</h3>
+        <div class="grid" data-section="contact"></div>
+      </section>
+
+      <section id="education" class="panel">
+        <h3>教育背景</h3>
+        <div class="grid" data-section="education"></div>
+      </section>
+
+      <section id="identity" class="panel">
+        <h3>证件信息</h3>
+        <div class="grid" data-section="identity"></div>
+      </section>
+
+      <section id="family" class="panel">
+        <h3>家庭信息</h3>
+        <div class="grid" data-section="family"></div>
+      </section>
+
+      <section id="grades" class="panel">
+        <h3>成绩与英语</h3>
+        <div class="grid" data-section="grades"></div>
+      </section>
+
+      <section id="statement" class="panel">
+        <h3>文书材料</h3>
+        <div class="grid" data-section="statement"></div>
+      </section>
+
+      <section id="awards" class="panel">
+        <h3>获奖情况</h3>
+        <p class="hint">每行一条</p>
+        <textarea id="awards" rows="6"></textarea>
+      </section>
+
+      <section id="papers" class="panel">
+        <h3>论文/科研成果</h3>
+        <p class="hint">每行一条，建议格式：标题 / 期刊或会议 / 年份</p>
+        <textarea id="papers" rows="6"></textarea>
+      </section>
+
+      <section id="projects" class="panel">
+        <h3>项目/科研经历</h3>
+        <p class="hint">每行一条</p>
+        <textarea id="projects" rows="6"></textarea>
+      </section>
+    </main>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+  <script src="options.js"></script>
+</body>
+</html>

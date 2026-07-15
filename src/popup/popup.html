@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>夏令营/预推免填表助手</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>夏令营填表助手</h1>
+      <small>数据仅保存在本地</small>
+    </header>
+
+    <section class="status">
+      <span id="site">检测当前站点...</span>
+    </section>
+
+    <section class="actions">
+      <button id="fillBtn" class="primary">一键填表</button>
+      <button id="optionsBtn">管理个人信息</button>
+    </section>
+
+    <section class="result" id="result" hidden>
+      <div class="summary">成功填充 <strong id="filledCount">0</strong> 项</div>
+      <ul id="matchedList"></ul>
+    </section>
+
+    <footer>
+      <a href="#" id="exportLink">导出资料</a>
+      <span class="sep">|</span>
+      <a href="#" id="importLink">导入资料</a>
+      <input type="file" id="importInput" accept=".json" hidden />
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
