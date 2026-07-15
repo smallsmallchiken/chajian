@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "夏令营收束器 （Campus Form Filler）",
+  "version": "1.0.0",
+  "description": "自动填写夏令营、预推免、推免服务系统中的个人信息表单，数据仅本地保存。",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "src/storage/profile.js",
+        "src/content/utils.js",
+        "src/content/form-finder.js",
+        "src/content/field-matcher.js",
+        "src/content/adapters/index.js",
+        "src/content/adapters/generic.js",
+        "src/content/adapters/chsi.js",
+        "src/content/adapter.js",
+        "src/content/main.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "options_page": "src/options/options.html"
+}
